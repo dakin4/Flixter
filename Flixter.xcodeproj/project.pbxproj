@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1B71BBDD20201E25005E0B25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71BBDC20201E25005E0B25 /* AppDelegate.swift */; };
-		1B71BBDF20201E25005E0B25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71BBDE20201E25005E0B25 /* ViewController.swift */; };
 		1B71BBE220201E25005E0B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B71BBE020201E25005E0B25 /* Main.storyboard */; };
 		1B71BBE420201E25005E0B25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B71BBE320201E25005E0B25 /* Assets.xcassets */; };
 		1B71BBE720201E25005E0B25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B71BBE520201E25005E0B25 /* LaunchScreen.storyboard */; };
 		1B71BBF220201E25005E0B25 /* FlixterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71BBF120201E25005E0B25 /* FlixterTests.swift */; };
 		1B71BBFD20201E25005E0B25 /* FlixterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71BBFC20201E25005E0B25 /* FlixterUITests.swift */; };
+		1B71BC0B20217A99005E0B25 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71BC0A20217A99005E0B25 /* NowPlayingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		1B71BBD920201E25005E0B25 /* Flixter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flixter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B71BBDC20201E25005E0B25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B71BBDE20201E25005E0B25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1B71BBE120201E25005E0B25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B71BBE320201E25005E0B25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B71BBE620201E25005E0B25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		1B71BBF820201E25005E0B25 /* FlixterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlixterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B71BBFC20201E25005E0B25 /* FlixterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlixterUITests.swift; sourceTree = "<group>"; };
 		1B71BBFE20201E25005E0B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B71BC0A20217A99005E0B25 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				1B71BBDC20201E25005E0B25 /* AppDelegate.swift */,
-				1B71BBDE20201E25005E0B25 /* ViewController.swift */,
+				1B71BC0A20217A99005E0B25 /* NowPlayingViewController.swift */,
 				1B71BBE020201E25005E0B25 /* Main.storyboard */,
 				1B71BBE320201E25005E0B25 /* Assets.xcassets */,
 				1B71BBE520201E25005E0B25 /* LaunchScreen.storyboard */,
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B71BBDF20201E25005E0B25 /* ViewController.swift in Sources */,
+				1B71BC0B20217A99005E0B25 /* NowPlayingViewController.swift in Sources */,
 				1B71BBDD20201E25005E0B25 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +503,7 @@
 				1B71BC0320201E25005E0B25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B71BC0420201E25005E0B25 /* Build configuration list for PBXNativeTarget "FlixterTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +512,7 @@
 				1B71BC0620201E25005E0B25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B71BC0720201E25005E0B25 /* Build configuration list for PBXNativeTarget "FlixterUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +521,7 @@
 				1B71BC0920201E25005E0B25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
