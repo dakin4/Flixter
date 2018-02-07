@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// this is created to be able to reuse unique cell in table view instead of using just once
 class MovieCell: UITableViewCell {
    
     @IBOutlet weak var posterImageView: UIImageView!

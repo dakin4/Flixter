@@ -15,6 +15,7 @@
 		1B71BBFD20201E25005E0B25 /* FlixterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71BBFC20201E25005E0B25 /* FlixterUITests.swift */; };
 		1B71BC0B20217A99005E0B25 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71BC0A20217A99005E0B25 /* NowPlayingViewController.swift */; };
 		1B99984E202401CB00C834E6 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B99984D202401CB00C834E6 /* MovieCell.swift */; };
+		1B999891202A688D00C834E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B999890202A688D00C834E6 /* DetailViewController.swift */; };
 		807586F5E7498367E9385DED /* Pods_FlixterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1060EF7356D25E8262CA3B2 /* Pods_FlixterTests.framework */; };
 		8A437BFEF843952504408BFB /* Pods_Flixter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDD75EA0030241DA88FC76F /* Pods_Flixter.framework */; };
 		EE9547FF3AF77FB1A7A449ED /* Pods_FlixterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847A585CC9222EC8DD67A7E3 /* Pods_FlixterUITests.framework */; };
@@ -53,6 +54,7 @@
 		1B71BBFE20201E25005E0B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B71BC0A20217A99005E0B25 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		1B99984D202401CB00C834E6 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		1B999890202A688D00C834E6 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1FDD75EA0030241DA88FC76F /* Pods_Flixter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flixter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		631A00F0A9FCA486CC508829 /* Pods-Flixter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flixter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flixter/Pods-Flixter.release.xcconfig"; sourceTree = "<group>"; };
 		70CA9AC1B0166D97271DF2CE /* Pods-Flixter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flixter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flixter/Pods-Flixter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,13 +118,13 @@
 		1B71BBDB20201E25005E0B25 /* Flixter */ = {
 			isa = PBXGroup;
 			children = (
+				1B99988F202A67C900C834E6 /* Views */,
+				1B99988E202A67AD00C834E6 /* View Controllers */,
 				1B71BBDC20201E25005E0B25 /* AppDelegate.swift */,
-				1B71BC0A20217A99005E0B25 /* NowPlayingViewController.swift */,
 				1B71BBE020201E25005E0B25 /* Main.storyboard */,
 				1B71BBE320201E25005E0B25 /* Assets.xcassets */,
 				1B71BBE520201E25005E0B25 /* LaunchScreen.storyboard */,
 				1B71BBE820201E25005E0B25 /* Info.plist */,
-				1B99984D202401CB00C834E6 /* MovieCell.swift */,
 			);
 			path = Flixter;
 			sourceTree = "<group>";
@@ -143,6 +145,23 @@
 				1B71BBFE20201E25005E0B25 /* Info.plist */,
 			);
 			path = FlixterUITests;
+			sourceTree = "<group>";
+		};
+		1B99988E202A67AD00C834E6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B71BC0A20217A99005E0B25 /* NowPlayingViewController.swift */,
+				1B999890202A688D00C834E6 /* DetailViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1B99988F202A67C900C834E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B99984D202401CB00C834E6 /* MovieCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		46F98EB35DB0DD31507DD04A /* Frameworks */ = {
@@ -466,6 +485,7 @@
 				1B71BC0B20217A99005E0B25 /* NowPlayingViewController.swift in Sources */,
 				1B71BBDD20201E25005E0B25 /* AppDelegate.swift in Sources */,
 				1B99984E202401CB00C834E6 /* MovieCell.swift in Sources */,
+				1B999891202A688D00C834E6 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

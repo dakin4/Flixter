@@ -18,7 +18,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
 
     
     
-    
+    // refreshControl is instiated, this can be attached to a view object that inherits or is UIScrollView
     var refreshControl: UIRefreshControl!
     
     //create an array of dictionaries
@@ -29,8 +29,11 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
 
         // Do any additional setup after loading the view.
         
+
+        //refreshControl object is created
          refreshControl = UIRefreshControl()
     
+        
         refreshControl.addTarget(self, action: #selector(NowPlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
         tableview.dataSource = self
         tableview.insertSubview(refreshControl, at: 0)
@@ -71,6 +74,30 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //sender is person or object that inisiated the segue
+        let cell = sender as! UITableViewCell
+        
+        if let indexPath = tableview.indexPath(for: cell){
+            
+            let movie = movies[indexPath.row]
+            
+            let detail = segue.destination as! DetailViewController
+            
+            detail.movie = movie
+            
+            
+        }
+        
+    
+        
+    }
+    
+    
+    
+    
     
     func fetchMovie () {
         movieActivityInd.startAnimating()
