@@ -16,6 +16,8 @@
 		1B71BC0B20217A99005E0B25 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71BC0A20217A99005E0B25 /* NowPlayingViewController.swift */; };
 		1B99984E202401CB00C834E6 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B99984D202401CB00C834E6 /* MovieCell.swift */; };
 		1B999891202A688D00C834E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B999890202A688D00C834E6 /* DetailViewController.swift */; };
+		1B999895202D5A4200C834E6 /* SuperheroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B999894202D5A4200C834E6 /* SuperheroViewController.swift */; };
+		1B999897202D5BA700C834E6 /* PosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B999896202D5BA700C834E6 /* PosterCell.swift */; };
 		807586F5E7498367E9385DED /* Pods_FlixterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1060EF7356D25E8262CA3B2 /* Pods_FlixterTests.framework */; };
 		8A437BFEF843952504408BFB /* Pods_Flixter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDD75EA0030241DA88FC76F /* Pods_Flixter.framework */; };
 		EE9547FF3AF77FB1A7A449ED /* Pods_FlixterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847A585CC9222EC8DD67A7E3 /* Pods_FlixterUITests.framework */; };
@@ -55,6 +57,8 @@
 		1B71BC0A20217A99005E0B25 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		1B99984D202401CB00C834E6 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		1B999890202A688D00C834E6 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1B999894202D5A4200C834E6 /* SuperheroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperheroViewController.swift; sourceTree = "<group>"; };
+		1B999896202D5BA700C834E6 /* PosterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterCell.swift; sourceTree = "<group>"; };
 		1FDD75EA0030241DA88FC76F /* Pods_Flixter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flixter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		631A00F0A9FCA486CC508829 /* Pods-Flixter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flixter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flixter/Pods-Flixter.release.xcconfig"; sourceTree = "<group>"; };
 		70CA9AC1B0166D97271DF2CE /* Pods-Flixter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flixter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flixter/Pods-Flixter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			children = (
 				1B71BC0A20217A99005E0B25 /* NowPlayingViewController.swift */,
 				1B999890202A688D00C834E6 /* DetailViewController.swift */,
+				1B999894202D5A4200C834E6 /* SuperheroViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				1B99984D202401CB00C834E6 /* MovieCell.swift */,
+				1B999896202D5BA700C834E6 /* PosterCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -482,7 +488,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B999895202D5A4200C834E6 /* SuperheroViewController.swift in Sources */,
 				1B71BC0B20217A99005E0B25 /* NowPlayingViewController.swift in Sources */,
+				1B999897202D5BA700C834E6 /* PosterCell.swift in Sources */,
 				1B71BBDD20201E25005E0B25 /* AppDelegate.swift in Sources */,
 				1B99984E202401CB00C834E6 /* MovieCell.swift in Sources */,
 				1B999891202A688D00C834E6 /* DetailViewController.swift in Sources */,

@@ -40,7 +40,7 @@ class DetailViewController: UIViewController {
         if let movie = movie{
             
           titleLabel.text = movie[MovieKeys.title] as? String
-            releaseDateLabel.text = movie["release_date"] as?String
+            releaseDateLabel.text = movie["release_date"] as? String
             OverviewLabel.text = movie["overview"] as? String
             
             let backdropPathString = movie[MovieKeys.backdropPath] as! String
