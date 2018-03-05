@@ -22,7 +22,10 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
     var refreshControl: UIRefreshControl!
     
     //create an array of dictionaries
-    var movies:[[String:Any]] = []
+    //string key and any output
+   // var movies:[[String:Any]] = []
+    var movies:[Movie] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +40,13 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         refreshControl.addTarget(self, action: #selector(NowPlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
         tableview.dataSource = self
         tableview.insertSubview(refreshControl, at: 0)
-        fetchMovie()
+        newfetchData()
     
     }
     
     func didPullToRefresh (_ refreshControl: UIRefreshControl){
         
-        fetchMovie()
+        newfetchData()
         
     }
     
@@ -58,19 +61,22 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
      {
         
         let cell = tableview.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as!MovieCell
-        
+        // make function to get title, overview, and posterpath url
         let movie = movies[indexPath.row]
-        let title = movie["title"] as! String
-        let overview = movie["overview"] as! String
+        
+        
+        let title = movie.getTitle()
+        let overview = movie.getoverview()
         cell.TitleLabel.text = title
         cell.TypeDes.text = overview
-        let posterPathString =  movie["poster_path"] as! String
         
-        let baseURLString = "https://image.tmdb.org/t/p/w500"
+        if let posterPathString:URL =  movie.getposterpath(){
+           
+        cell.posterImageView.af_setImage(withURL:posterPathString)
+        }
         
-        let posterURL = URL(string: baseURLString + posterPathString)!
+
         
-        cell.posterImageView.af_setImage(withURL:posterURL)
         
         return cell
     }
@@ -87,17 +93,11 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
             let detail = segue.destination as! DetailViewController
             
             detail.movie = movie
-            
-            
+ 
         }
-        
-    
-        
+
     }
-    
-    
-    
-    
+
     
     func fetchMovie () {
         movieActivityInd.startAnimating()
@@ -124,18 +124,24 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 
                 //casting items within the dictionary under the key results into an array of dictionaries
-                let movi = dataDictionary["results"] as! [[String: Any]]
+                let moviDictionary = dataDictionary["results"] as! [[String: Any]]
+                
+                
                 //self.movies to show that it has the scope of the whole class its in
-                self.movies = movi
+                 self.movies = []
+                for movieDictionaries in moviDictionary {
+                    
+                    let movieD = Movie(dictionary: movieDictionaries)
+                    
+                    self.movies.append(movieD)
               
+                }
+         
                 self.tableview.reloadData() //reloads data once the data is fetched from the network api
                 self.refreshControl.endRefreshing()
                 self.movieActivityInd.stopAnimating()
                 //array cycles through each key in dictionary till it reaches one named "title" then the data that key holds will be casted to a string and passed to the title constant
-                for movie in self.movies{
-                    let title = movie["title"] as! String
-                    print(title)
-                }
+                
      
             }
           
@@ -144,6 +150,27 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         task.resume()
 
         
+    }
+    
+    
+    
+    func newfetchData () {
+        
+        movieActivityInd.startAnimating()
+        
+        
+        MovieApiManager().nowPlayingMovies { (movies: [Movie]?, error: Error?) in
+            if let movies = movies {
+                self.movies = movies
+                self.tableview.reloadData()
+            }
+        }
+        self.refreshControl.endRefreshing()
+        self.movieActivityInd.stopAnimating()
+
+        
+       
+
     }
     
     

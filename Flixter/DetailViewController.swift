@@ -9,15 +9,7 @@
 import UIKit
 
 // way to store data, easy to call instead of typing. why use this instead of constants within codepath class
-enum MovieKeys {
-    
-    static let title = "title"
-    
-    static let backdropPath = "backdrop_path"
-    
-    static let posterPath = "poster_path"
-    
-}
+
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var posterImageView: UIImageView!
@@ -32,32 +24,39 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var OverviewLabel: UILabel!
     
     //dictionary
-    var movie : [String: Any]?
+    var movie : Movie?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let movie = movie{
             
-          titleLabel.text = movie[MovieKeys.title] as? String
-            releaseDateLabel.text = movie["release_date"] as? String
-            OverviewLabel.text = movie["overview"] as? String
+          titleLabel.text = movie.getTitle()
+            if let release: String = movie.releaseDate {
+               releaseDateLabel.text = release
+            }
             
-            let backdropPathString = movie[MovieKeys.backdropPath] as! String
-            
-            let posterPathString = movie[MovieKeys.posterPath] as! String
-            
-            let baseURLString = "https://image.tmdb.org/t/p/w500"
-            
-            let backdropURL = URL(string: baseURLString + backdropPathString)!
-            
-            backDropImageView.af_setImage(withURL: backdropURL)
+            if let overview = movie.getoverview(){
+                
+                OverviewLabel.text = overview 
+
+            }
             
             
-            let posterPathURL = URL(string: baseURLString + posterPathString)!
+            if let backdropPathString = movie.backdropURL{
+                
+                backDropImageView.af_setImage(withURL: backdropPathString)
+
+            }
             
-            posterImageView.af_setImage(withURL: posterPathURL)
-        }
+            
+            
+            if let poster = movie.getposterpath(){
+                
+                posterImageView.af_setImage(withURL: poster)
+   
+            }
+       }
         
         
         

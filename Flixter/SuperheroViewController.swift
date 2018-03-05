@@ -7,14 +7,14 @@
 //
 
 import UIKit
-import Alamofire
+import AlamofireImage
 
 class SuperheroViewController: UIViewController, UICollectionViewDataSource {
     
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var movies: [[String:Any]] = []
+    var movies: [Movie] = []
 
     override func viewDidLoad() {
         
@@ -40,7 +40,7 @@ class SuperheroViewController: UIViewController, UICollectionViewDataSource {
         layout.itemSize = CGSize(width: width, height: width * 3 / 2)
         
         
-        fetchMovie()
+       newFetchData()
        
     }
 
@@ -70,11 +70,10 @@ class SuperheroViewController: UIViewController, UICollectionViewDataSource {
         
         let movie = movies[indexPath.item]
         
-        if let posterPathString = movie["poster_path"] as? String
+        if let posterPathString = movie.getposterpath()
         {
-            let baseURLString = "https://image.tmdb.org/t/p/w500"
-            
-            let posterURL = URL(string: baseURLString + posterPathString)!
+  
+            let posterURL = posterPathString
             
             cell.posterImageView.af_setImage(withURL: posterURL)
             
@@ -112,16 +111,20 @@ class SuperheroViewController: UIViewController, UICollectionViewDataSource {
                 //casting items within the dictionary under the key results into an array of dictionaries
                 let movi = dataDictionary["results"] as! [[String: Any]]
                 //self.movies to show that it has the scope of the whole class its in
-                self.movies = movi
+                for movieDictionaries in movi {
+                    
+                    let movieD = Movie(dictionary: movieDictionaries)
+                    
+                    self.movies.append(movieD)
+                    
+                }
+                
                 
                 self.collectionView.reloadData() //reloads data once the data is fetched from the network api
                // self.refreshControl.endRefreshing()
                 //self.movieActivityInd.stopAnimating()
                 //array cycles through each key in dictionary till it reaches one named "title" then the data that key holds will be casted to a string and passed to the title constant
-                for movie in self.movies{
-                    let title = movie["title"] as! String
-                    print(title)
-                }
+                
                 
             }
             
@@ -132,6 +135,17 @@ class SuperheroViewController: UIViewController, UICollectionViewDataSource {
         
     }
     
+    func newFetchData(){
+        
+        MovieApiManager().nowPlayingMovies { (movies: [Movie]?, error: Error?) in
+            if let movies = movies {
+                self.movies = movies
+                self.collectionView.reloadData()
+            }
+        }
+        
+        
+    }
 
     
     

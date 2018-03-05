@@ -1,4 +1,4 @@
-# Lab 3 - *Flixter*
+# Lab 5 - *Flixter*
 
 **Flixter** is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
@@ -8,14 +8,10 @@ Time spent: **3** hours spent in total
 
 The following **required** user stories are complete:
 
-- The following screens use AutoLayout to adapt to various orientations and screen sizes
-- [x] Movie feed view (+3pt)
-- [x] Detail view (+2pt)
-
-The following **stretch** user stories are implemented:
-
-- [ ] Dynamic Height Cells (+1)
-- [x] Collection View AutoLayout (+2)
+- [x] Create a movie model (+2pt)
+- [x] Implement the movie model (+2pt)
+- [x] Implement property observers (+2pt)
+- [x] Create a basic API Client (+2pt)
 
 The following **additional** user stories are implemented:
 
@@ -23,21 +19,20 @@ The following **additional** user stories are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.what is a best way to make the detail view adapt to various orientations.
-2.How do I get text to not run off the screen
+1. I do not understand the arguments of the nowplaying function in the MovieApiManager class
+2.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/Kvlf6Ns.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/JLLc1wF.gif' title = 'Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 Describe any challenges encountered while building the app.
-1.The backdrop image doesnt stretch toe the sides of the screen when in landscape mode
 
 ## License
 
